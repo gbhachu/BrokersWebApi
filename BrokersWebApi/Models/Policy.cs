@@ -18,7 +18,7 @@ namespace BrokersWebApi.Models
 
         public string CustomerAddress { get; set; }
 
-        public float Premium { get; set; }
+        public string Premium { get; set; }
 
         public string PolicyType { get; set; }
 
