@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace BrokersWebApi.Models
@@ -12,6 +13,11 @@ namespace BrokersWebApi.Models
 
         [Key]
         public int PolicyId { get; set; }
+        
+        public int ClientId { get; set; }
+
+        [JsonIgnore]
+        public virtual Client Client { get; set; }
 
         [Required]
         public string CustomerName { get; set; }

@@ -3,14 +3,16 @@ using BrokersWebApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BrokersWebApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200412145753_Client_Policy_Tables_updated")]
+    partial class Client_Policy_Tables_updated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,7 +71,7 @@ namespace BrokersWebApi.Migrations
 
             modelBuilder.Entity("BrokersWebApi.Models.Policy", b =>
                 {
-                    b.HasOne("BrokersWebApi.Models.Client", "Client")
+                    b.HasOne("BrokersWebApi.Models.Client", null)
                         .WithMany("ClientPolicies")
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade)

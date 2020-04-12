@@ -33,6 +33,7 @@ namespace BrokersWebApi.Controllers
         public async Task<ActionResult<Client>> GetClient(int id)
         {
             var client = await _context.Clients.FindAsync(id);
+            client.ClientPolicies = await _context.Policies.Where(p => p.ClientId == client.ClientId).ToListAsync();
 
             if (client == null)
             {

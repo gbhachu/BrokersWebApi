@@ -13,5 +13,7 @@ namespace BrokersWebApi.Models
 
         [Required]
         public string ClientName { get; set; }
+
+        public IList<Policy> ClientPolicies { get; set; }
     }
 }
