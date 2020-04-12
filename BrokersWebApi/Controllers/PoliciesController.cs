@@ -23,9 +23,11 @@ namespace BrokersWebApi.Controllers
 
         // GET: api/Policies
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Policy>>> GetPolicies()
+        public async Task<ActionResult<IEnumerable<Policy>>> GetPolicies(Client Client)
         {
-            return await _context.Policies.ToListAsync();
+            var result = await _context.Policies.Where(p => p.ClientId == Client.ClientId).ToListAsync();
+
+            return result;
         }
 
         // GET: api/Policies/5
@@ -106,5 +108,7 @@ namespace BrokersWebApi.Controllers
         {
             return _context.Policies.Any(e => e.PolicyId == id);
         }
+
+        
     }
 }

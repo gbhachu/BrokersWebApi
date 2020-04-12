@@ -3,19 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ClientPoliciesComponent } from './client-policies/client-policies.component';
-import { ClientPolicyListComponent } from './client-policies/client-policy-list/client-policy-list.component';
+import { ClientPoliciesListComponent } from './client-policies/client-policies-list/client-policies-list.component';
 import { ClientService } from './shared/client.service';
+import { HttpClientModule } from '@angular/common/http';
+import { PolicyService } from './shared/policy.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClientPoliciesComponent,
-    ClientPolicyListComponent
+    ClientPoliciesListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, HttpClientModule
   ],
-  providers: [ClientService],
+  providers: [ClientService , PolicyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

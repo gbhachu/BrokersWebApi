@@ -1,0 +1,12 @@
+<table class="table table-hover">
+    
+    
+    <tr *ngFor="let pl of service.list">
+        <th>{{pl.PolicyId}}</th>
+        <td>{{pl.CustomerName}}</td>
+        <td>{{pl.CustomerAddress}}</td>
+        <td>{{pl.Premium}}</td>
+        <td>{{pl.PolicyType}}</td>
+        <td>{{pl.Insurer}}</td>
+    </tr>
+</table>
